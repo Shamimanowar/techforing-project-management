@@ -3,32 +3,40 @@ from django.contrib.auth.models import AbstractUser
 from uuid import uuid4
 from external.models import BaseModel
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import Group, Permission
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     email = models.EmailField(unique=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-
     groups = models.ManyToManyField(
-        Group,
+        'auth.Group',
         related_name='project_management_users',
         blank=True,
         help_text=_('The groups this user belongs to. A user will get all permissions granted to each of their groups.'),
         verbose_name=_('groups'),
     )
     user_permissions = models.ManyToManyField(
-        Permission,
+        'auth.Permission',
         related_name='project_management_user_permissions',
         blank=True,
         help_text=_('Specific permissions for this user.'),
         verbose_name=_('user permissions'),
     )
 
+    class Meta:
+        verbose_name = _('user')
+        
+        def __str__(self):
+            return self.username or str(self.id)[:8]
+
 class Project(BaseModel):
     name = models.CharField(max_length=255, help_text=_("What is the name of the project?"))
     description = models.TextField(help_text=_("What is the project about?"))
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owned_projects', help_text=_("Who is the owner of the project?"))
+
+    class Meta:
+        def __str__(self):
+            return self.name
 
 class ProjectMember(models.Model):
     ROLE_CHOICES = [
@@ -60,7 +68,14 @@ class Task(BaseModel):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='tasks', help_text=_("Which project does this task belong to?"))
     due_date = models.DateTimeField(_("Expiry Date"), help_text=_("What is the expiry date of the task?"))
 
+    class Meta:
+        def __str__(self):
+            return self.title
 class Comment(BaseModel):
     content = models.TextField(help_text=_("What is the content of the comment?"))
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments', help_text=_("Who made the comment?"))
     task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name='comments', help_text=_("Which task does this comment belong to?"))
+
+    class Meta:
+        def __str__(self):
+            return self.content[:20]
