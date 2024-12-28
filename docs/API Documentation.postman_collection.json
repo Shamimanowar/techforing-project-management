@@ -1,0 +1,3996 @@
+{
+	"info": {
+		"_postman_id": "3aee4637-2feb-4b46-b5ef-9af697fab468",
+		"name": "API Documentation",
+		"description": "This is a project management tool that allows  \nteams to collaborate on projects. The tool needs an API to manage users, projects,  \ntasks, and comments. The API will be consumed by their front-end web application  \nand mobile application.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18855146"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"// pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"// pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "shamim12",
+									"description": "Username of the user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"description": "Password set by the user",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "abc@gmail.com1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"users",
+								""
+							]
+						},
+						"description": "Create user"
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim11131",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a1b1c@gmail.coma111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/users/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 01:59:39 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b2f7342c-2ed3-444f-84f0-58126809de07\",\n    \"username\": \"shamim11131\",\n    \"email\": \"a1b1c@gmail.coma111\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"date_joined\": \"2024-12-27T01:59:39.276342Z\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim11131",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a1b1c@gmail.coma111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/users/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "107"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:01:48 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": [\n        \"A user with that username already exists.\"\n    ],\n    \"email\": [\n        \"user with this email already exists.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "User login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "shamim",
+									"description": "Username of the user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"description": "Password set by the user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 26 Dec 2024 14:34:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "582"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNTMxMDA4OSwiaWF0IjoxNzM1MjIzNjg5LCJqdGkiOiIxY2IzYmU5NGJiMmE0NjVhODBiMmNlNjQzNDA2ODhlMCIsInVzZXJfaWQiOiJmYTdhZDYyNi05YjQ1LTQ1OTMtOGZhZi0zMWI5ZTc5MjBjOWEifQ.nzo0252c29Y0GTIB0okAVykenKXoDzXxjo5vRE-ak-I\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1MjIzOTg5LCJpYXQiOjE3MzUyMjM2ODksImp0aSI6IjMwMWZjMGUxNWE2MTQ4YjhiZTc4NmQzZjM1NDExMGE5IiwidXNlcl9pZCI6ImZhN2FkNjI2LTliNDUtNDU5My04ZmFmLTMxYjllNzkyMGM5YSJ9.7gsAtb3XkEkZ2-cwSSugas5oeYuJZvYAePH3eTd8mFM\"\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim2",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 26 Dec 2024 14:36:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"No active account found with the given credentials\"\n}"
+						},
+						{
+							"name": "User login Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim11131",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "582"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 01:59:56 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNjEyODc5NiwiaWF0IjoxNzM1MjY0Nzk2LCJqdGkiOiIxZWFjZWIwYWJlYmQ0NTk4YmMwMjdmYjU5ZjRkYzg1NCIsInVzZXJfaWQiOiJiMmY3MzQyYy0yZWQzLTQ0NGYtODRmMC01ODEyNjgwOWRlMDcifQ.X4xfJxdkybdkcNmNXd_DuAfO2uzH5NAWM1qjcJaAy9Y\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1Njk2Nzk2LCJpYXQiOjE3MzUyNjQ3OTYsImp0aSI6ImE0ZDM1MDg0ZWRmNzQxMGU4OTlkZmVlNDEyNzk1NjQ0IiwidXNlcl9pZCI6ImIyZjczNDJjLTJlZDMtNDQ0Zi04NGYwLTU4MTI2ODA5ZGUwNyJ9.KfzOQ2Da7E7K8pyprRCALKG_XP5rJpgNSNgdZN7cmUg\"\n}"
+						},
+						{
+							"name": "User login Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim11",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:01:34 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Www-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"No active account found with the given credentials\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User List (Staff)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/app/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"users",
+								""
+							]
+						},
+						"description": "User list API to be used by staff or super user"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/users/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1200"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:03:25 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"fa7ad626-9b45-4593-8faf-31b9e7920c9a\",\n        \"username\": \"shamim\",\n        \"email\": \"shamim@buildnow.sa\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"date_joined\": \"2024-12-26T14:29:26.240306Z\"\n    },\n    {\n        \"id\": \"6a6f2a81-13a7-42dc-a454-f3580c05a2b3\",\n        \"username\": \"shamim121\",\n        \"email\": \"abc@gmail.coma\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"date_joined\": \"2024-12-27T01:43:45.795642Z\"\n    },\n    {\n        \"id\": \"b11a9231-f078-4a91-8e37-eeea489415c8\",\n        \"username\": \"shamim1\",\n        \"email\": \"ab1c@gmail.coma\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"date_joined\": \"2024-12-27T01:46:51.204706Z\"\n    },\n    {\n        \"id\": \"a409ac25-78a7-4f6e-8af6-5be125c4b652\",\n        \"username\": \"shamim11\",\n        \"email\": \"ab1c@gmail.coma1\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"date_joined\": \"2024-12-27T01:48:06.514748Z\"\n    },\n    {\n        \"id\": \"9e22928d-9347-4879-9897-06931baeac40\",\n        \"username\": \"shamim111\",\n        \"email\": \"ab1c@gmail.coma11\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"date_joined\": \"2024-12-27T01:52:19.995010Z\"\n    },\n    {\n        \"id\": \"8f094e5e-0ddf-4467-aea5-565e4fda1112\",\n        \"username\": \"shamim1113\",\n        \"email\": \"ab1c@gmail.coma111\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"date_joined\": \"2024-12-27T01:54:24.627792Z\"\n    },\n    {\n        \"id\": \"b2f7342c-2ed3-444f-84f0-58126809de07\",\n        \"username\": \"shamim11131\",\n        \"email\": \"a1b1c@gmail.coma111\",\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"date_joined\": \"2024-12-27T01:59:39.276342Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "User Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/app/users/:user_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"users",
+								":user_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "fa7ad626-9b45-4593-8faf-31b9e7920c9a"
+								}
+							]
+						},
+						"description": "Get user details"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/users/:user_id/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"users",
+										":user_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "fa7ad626-9b45-4593-8faf-31b9e7920c9a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:05:46 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"fa7ad626-9b45-4593-8faf-31b9e7920c9a\",\n    \"username\": \"shamim\",\n    \"email\": \"shamim@buildnow.sa\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"date_joined\": \"2024-12-26T14:29:26.240306Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/app/users/:user_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"users",
+								":user_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "fe92aa1b-a48a-4b22-aede-3795892cffcb"
+								}
+							]
+						},
+						"description": "Delete user"
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/users/:user_id/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"users",
+										":user_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "fa7ad626-9b45-4593-8faf-31b9e7920c9a"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:07:30 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "To handle the user-related operations."
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "List Projects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"// pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"// pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/app/projects/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"projects",
+								""
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/projects/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"projects",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:46:17 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n        \"name\": \"1st project edited\",\n        \"description\": \"Hello techforing, how are you doing?\",\n        \"owner\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n        \"created_at\": \"2024-12-27T02:18:16.665501Z\",\n        \"updated_at\": \"2024-12-27T02:27:05.739728Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "1st test project",
+									"description": "Username of the user",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Hello techforing, how are you doing?",
+									"description": "Password set by the user",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/projects/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"projects",
+								""
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "1st test project",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Hello techforing, how are you doing?",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "owner",
+											"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/projects/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"projects",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:18:16 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n    \"name\": \"1st test project\",\n    \"description\": \"Hello techforing, how are you doing?\",\n    \"owner\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"created_at\": \"2024-12-27T02:18:16.665501Z\",\n    \"updated_at\": \"2024-12-27T02:18:16.665501Z\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "1st test project",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Hello techforing, how are you doing?",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "owner",
+											"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/projects/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"projects",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:21:17 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"owner\": [\n        \"This field is required.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/app/projects/:project_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"projects",
+								":project_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/projects/:project_id/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"projects",
+										":project_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "project_id",
+											"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:25:31 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n    \"name\": \"1st test project\",\n    \"description\": \"Hello techforing, how are you doing?\",\n    \"owner\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"created_at\": \"2024-12-27T02:18:16.665501Z\",\n    \"updated_at\": \"2024-12-27T02:18:16.665501Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "1st project edited",
+									"description": "Name of the project",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "",
+									"description": "Owner of the project",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "Details of the project",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/projects/:project_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"projects",
+								":project_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/users/:user_id/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"users",
+										":user_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "fa7ad626-9b45-4593-8faf-31b9e7920c9a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:05:46 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"fa7ad626-9b45-4593-8faf-31b9e7920c9a\",\n    \"username\": \"shamim\",\n    \"email\": \"shamim@buildnow.sa\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"date_joined\": \"2024-12-26T14:29:26.240306Z\"\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "1st project edited",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/projects/:project_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"projects",
+										":project_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "project_id",
+											"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:27:05 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n    \"name\": \"1st project edited\",\n    \"description\": \"Hello techforing, how are you doing?\",\n    \"owner\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"created_at\": \"2024-12-27T02:18:16.665501Z\",\n    \"updated_at\": \"2024-12-27T02:27:05.739728Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/app/projects/:project_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"projects",
+								":project_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "312e2cc2-325d-4213-834c-2c43c205e185"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/projects/:project_id/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"projects",
+										":project_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "project_id",
+											"value": "312e2cc2-325d-4213-834c-2c43c205e185"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:28:20 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "The \\`/projects/\\` endpoint to handle the project related operations."
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "List Tasks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"// pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"// pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "shamim11131",
+									"description": "Username of the user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"description": "Password set by the user",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "a1b1c@gmail.coma111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/tasks/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"tasks",
+								""
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim11131",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a1b1c@gmail.coma111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/app/tasks/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"app",
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "383"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:34:39 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"aa603d55-8389-49e4-8e24-e7ea332ae867\",\n        \"title\": \"1st test task\",\n        \"description\": \"Hello techforing, how are you doing?\",\n        \"status\": \"To Do\",\n        \"priority\": \"Medium\",\n        \"assigned_to\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n        \"project\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n        \"created_at\": \"2024-12-27T02:33:28.077068Z\",\n        \"updated_at\": \"2024-12-27T02:33:28.077068Z\",\n        \"due_date\": \"2025-01-05T00:00:00Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "1st test task",
+									"description": "Username of the user",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Hello techforing, how are you doing?",
+									"description": "Password set by the user",
+									"type": "text"
+								},
+								{
+									"key": "assigned_to",
+									"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "To Do",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "Medium",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2025-01-09",
+									"type": "text"
+								},
+								{
+									"key": "project",
+									"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/tasks/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"tasks",
+								""
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "1st test task",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Hello techforing, how are you doing?",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "assigned_to",
+											"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "To Do",
+											"type": "text"
+										},
+										{
+											"key": "priority",
+											"value": "Medium",
+											"type": "text"
+										},
+										{
+											"key": "due_date",
+											"value": "2025-01-05",
+											"type": "text"
+										},
+										{
+											"key": "project",
+											"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/tasks/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "381"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:33:28 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"aa603d55-8389-49e4-8e24-e7ea332ae867\",\n    \"title\": \"1st test task\",\n    \"description\": \"Hello techforing, how are you doing?\",\n    \"status\": \"To Do\",\n    \"priority\": \"Medium\",\n    \"assigned_to\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"project\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n    \"created_at\": \"2024-12-27T02:33:28.077068Z\",\n    \"updated_at\": \"2024-12-27T02:33:28.077068Z\",\n    \"due_date\": \"2025-01-05T00:00:00Z\"\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "1st test task",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Hello techforing, how are you doing?",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "assigned_to",
+											"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "To Do",
+											"type": "text"
+										},
+										{
+											"key": "priority",
+											"value": "Medium",
+											"type": "text"
+										},
+										{
+											"key": "due_date",
+											"value": "2025-01-05",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "project",
+											"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/tasks/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:34:00 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Www-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Given token not valid for any token type\",\n    \"code\": \"token_not_valid\",\n    \"messages\": [\n        {\n            \"token_class\": \"AccessToken\",\n            \"token_type\": \"access\",\n            \"message\": \"Token is invalid or expired\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "1st test task",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Hello techforing, how are you doing?",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "assigned_to",
+											"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "To Do",
+											"type": "text"
+										},
+										{
+											"key": "priority",
+											"value": "Medium",
+											"type": "text"
+										},
+										{
+											"key": "due_date",
+											"value": "2025-01-05",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "project",
+											"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/tasks/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:35:03 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"due_date\": [\n        \"This field is required.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/app/tasks/:task_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"tasks",
+								":task_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "aa603d55-8389-49e4-8e24-e7ea332ae867"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/app/tasks/:task_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										":task_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "task_id",
+											"value": "aa603d55-8389-49e4-8e24-e7ea332ae867"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "381"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:36:47 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"aa603d55-8389-49e4-8e24-e7ea332ae867\",\n    \"title\": \"1st test task\",\n    \"description\": \"Hello techforing, how are you doing?\",\n    \"status\": \"To Do\",\n    \"priority\": \"Medium\",\n    \"assigned_to\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"project\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n    \"created_at\": \"2024-12-27T02:33:28.077068Z\",\n    \"updated_at\": \"2024-12-27T02:33:28.077068Z\",\n    \"due_date\": \"2025-01-05T00:00:00Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "In Progress",
+									"description": "Status of the project (In Progress, To Do, Done)",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "",
+									"description": "Midium, High, Low",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "due_date",
+									"value": "",
+									"description": "yr-month-day",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "project",
+									"value": "",
+									"description": "Name of the project",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "Details of the task",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/tasks/:task_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"tasks",
+								":task_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "aa603d55-8389-49e4-8e24-e7ea332ae867"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "In Progress",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/tasks/:task_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										":task_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "task_id",
+											"value": "aa603d55-8389-49e4-8e24-e7ea332ae867"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "387"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:38:36 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"aa603d55-8389-49e4-8e24-e7ea332ae867\",\n    \"title\": \"1st test task\",\n    \"description\": \"Hello techforing, how are you doing?\",\n    \"status\": \"In Progress\",\n    \"priority\": \"Medium\",\n    \"assigned_to\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"project\": \"b4062c4e-ab34-45fb-89e4-109b2b3821d8\",\n    \"created_at\": \"2024-12-27T02:33:28.077068Z\",\n    \"updated_at\": \"2024-12-27T02:38:36.452699Z\",\n    \"due_date\": \"2025-01-05T00:00:00Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Task",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/app/tasks/:task_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"tasks",
+								":task_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "99bd07c4-8d14-4a65-995a-4913ef4057d7"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/app/tasks/:task_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										":task_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "task_id",
+											"value": "99bd07c4-8d14-4a65-995a-4913ef4057d7"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:39:30 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "The `/me` endpoints let you manage information about the authenticated user."
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "List Comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"// pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"// pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "shamim11131",
+									"description": "Username of the user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"description": "Password set by the user",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "a1b1c@gmail.coma111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/comments/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"comments",
+								""
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "shamim11131",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a1b1c@gmail.coma111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/comments/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"comments",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "513"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:44:42 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"634633a4-8e5e-4731-b668-8c7ee27efe33\",\n        \"content\": \"1st comment to test\",\n        \"user\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n        \"task\": \"aa603d55-8389-49e4-8e24-e7ea332ae867\",\n        \"created_at\": \"2024-12-27T02:43:35.526541Z\",\n        \"updated_at\": \"2024-12-27T02:43:35.526541Z\"\n    },\n    {\n        \"id\": \"5ccc85e3-14ac-4483-8b2b-d6d2c2c99fbf\",\n        \"content\": \"2nd comment to test\",\n        \"user\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n        \"task\": \"aa603d55-8389-49e4-8e24-e7ea332ae867\",\n        \"created_at\": \"2024-12-27T02:44:33.092114Z\",\n        \"updated_at\": \"2024-12-27T02:44:33.092114Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json()\r",
+									"\r",
+									"pm.collectionVariables.set(\"access_token\", res['access']);\r",
+									"pm.collectionVariables.set(\"refresh_token\", res['refresh']);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Another test comment",
+									"description": "Username of the user",
+									"type": "text"
+								},
+								{
+									"key": "task",
+									"value": "7ab0cdfb-91ff-4366-8a9e-8410bb0f5a2c",
+									"description": "Password set by the user",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+									"description": "Who is making the user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/comments/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"comments",
+								""
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "1st test task",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Hello techforing, how are you doing?",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "assigned_to",
+											"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "To Do",
+											"type": "text"
+										},
+										{
+											"key": "priority",
+											"value": "Medium",
+											"type": "text"
+										},
+										{
+											"key": "due_date",
+											"value": "2025-01-05",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "project",
+											"value": "b4062c4e-ab34-45fb-89e4-109b2b3821d8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/tasks/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:34:00 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Www-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Given token not valid for any token type\",\n    \"code\": \"token_not_valid\",\n    \"messages\": [\n        {\n            \"token_class\": \"AccessToken\",\n            \"token_type\": \"access\",\n            \"message\": \"Token is invalid or expired\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "1st comment to test",
+											"description": "Username of the user",
+											"type": "text"
+										},
+										{
+											"key": "task",
+											"value": "aa603d55-8389-49e4-8e24-e7ea332ae867",
+											"description": "Password set by the user",
+											"type": "text"
+										},
+										{
+											"key": "user",
+											"value": "f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/comments/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"comments",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:43:35 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"634633a4-8e5e-4731-b668-8c7ee27efe33\",\n    \"content\": \"1st comment to test\",\n    \"user\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"task\": \"aa603d55-8389-49e4-8e24-e7ea332ae867\",\n    \"created_at\": \"2024-12-27T02:43:35.526541Z\",\n    \"updated_at\": \"2024-12-27T02:43:35.526541Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve Comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/app/comments/:comment_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"comments",
+								":comment_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "comment_id",
+									"value": "f9ab9949-1de1-42dd-b148-7a649484a686"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/app/comments/:comment_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"comments",
+										":comment_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "comment_id",
+											"value": "f9ab9949-1de1-42dd-b148-7a649484a686"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "256"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:48:57 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"f9ab9949-1de1-42dd-b148-7a649484a686\",\n    \"content\": \"Another test comment\",\n    \"user\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"task\": \"7ab0cdfb-91ff-4366-8a9e-8410bb0f5a2c\",\n    \"created_at\": \"2024-12-27T02:48:03.100589Z\",\n    \"updated_at\": \"2024-12-27T02:48:03.100589Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Another test comment edited",
+									"description": "Comment's content",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"description": "who is making the comment",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "task",
+									"value": "",
+									"description": "The task under which you are making comment",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/app/comments/:comment_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"comments",
+								":comment_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "comment_id",
+									"value": "f9ab9949-1de1-42dd-b148-7a649484a686"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "Another test comment edited",
+											"type": "text"
+										},
+										{
+											"key": "user",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "task",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/app/comments/:comment_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"comments",
+										":comment_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "comment_id",
+											"value": "f9ab9949-1de1-42dd-b148-7a649484a686"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:50:41 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"f9ab9949-1de1-42dd-b148-7a649484a686\",\n    \"content\": \"Another test comment edited\",\n    \"user\": \"f7d7ffbf-7457-4f7b-b2ad-2923d05a8cfc\",\n    \"task\": \"7ab0cdfb-91ff-4366-8a9e-8410bb0f5a2c\",\n    \"created_at\": \"2024-12-27T02:48:03.100589Z\",\n    \"updated_at\": \"2024-12-27T02:50:41.802465Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/app/comments/:comment_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"app",
+								"comments",
+								":comment_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "comment_id",
+									"value": "634633a4-8e5e-4731-b668-8c7ee27efe33"
+								}
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/app/tasks/:task_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"tasks",
+										":task_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "task_id",
+											"value": "99bd07c4-8d14-4a65-995a-4913ef4057d7"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:39:30 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/app/comments/:comment_id/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"app",
+										"comments",
+										":comment_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "comment_id",
+											"value": "634633a4-8e5e-4731-b668-8c7ee27efe33"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Dec 2024 02:51:49 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "2a09:bac5:483:1028::19c:16b"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "The `/me` endpoints let you manage information about the authenticated user."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api"
+		},
+		{
+			"key": "variable_key",
+			"value": ""
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "refresh_token",
+			"value": ""
+		}
+	]
+}

@@ -72,6 +72,7 @@ To run the tests, use the following command:
 ```bash
 python manage.py test
 ```
+Postman collection is also added in the the docs folder, you can import and use this from postman desktop client.
 
 ## API Endpoints
 
